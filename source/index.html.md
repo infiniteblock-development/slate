@@ -203,11 +203,6 @@ print(r.json())
 
 <h3 id="1.1-지원-네트워크-전체-목록-조회-responseschema">Response Schema</h3>
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
 <h1 id="pocket-api-documentation-2-coin-token">2. Coin/Token</h1>
 
 ## 2.1 토큰 심볼별로 원화 가격 정보 조회
@@ -375,11 +370,6 @@ Status Code **200**
 |» englishName|string|false|코인 영문명|
 |» symbol|string|false|코인 심볼|
 |» price|number(double)|false|코인 원화 가격|
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
 
 <h1 id="pocket-api-documentation-3-wallet">3. Wallet</h1>
 
@@ -564,11 +554,6 @@ print(r.json())
 
 <h3 id="3.1-전체-지갑-목록-조회-responseschema">Response Schema</h3>
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
 ## 3.2 지갑 생성
 
 <a id="opIdpostPocketWallet"></a>
@@ -737,11 +722,6 @@ print(r.json())
 
 <h3 id="3.2-지갑-생성-responseschema">Response Schema</h3>
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
 ## 3.3 지갑 내 자산 추가하기
 
 <a id="opIdpostPocketWalletAsset"></a>
@@ -905,11 +885,6 @@ print(r.json())
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
 <h3 id="3.3-지갑-내-자산-추가하기-responseschema">Response Schema</h3>
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
 
 ## 3.4 지갑 상세 정보 조회
 
@@ -1083,11 +1058,6 @@ print(r.json())
 
 <h3 id="3.4-지갑-상세-정보-조회-responseschema">Response Schema</h3>
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
 ## 3.5 지갑 정보 변경
 
 <a id="opIdputPocketWallet"></a>
@@ -1256,11 +1226,6 @@ print(r.json())
 
 <h3 id="3.5-지갑-정보-변경-responseschema">Response Schema</h3>
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
 ## 3.7 지갑 삭제하기
 
 <a id="opIddeletePocketWallet"></a>
@@ -1409,11 +1374,6 @@ print(r.json())
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
 <h3 id="3.7-지갑-삭제하기-responseschema">Response Schema</h3>
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
 
 ## 3.8 코인/토큰별 원화 기준 자산 비중 조회
 
@@ -1577,11 +1537,6 @@ Status Code **200**
 |» balance|number|false|코인 양|
 |» krwAmount|number|false|자산 코인 원화 가치|
 |» percentage|number|false|자산 코인 비중|
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
 
 <h1 id="pocket-api-documentation-4-address">4. Address</h1>
 
@@ -1753,11 +1708,6 @@ print(r.json())
 
 <h3 id="4.1-주소별로-잔액-조회-responseschema">Response Schema</h3>
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
 ## 4.2 주소 생성하기
 
 <a id="opIdpostPocketAddress"></a>
@@ -1921,11 +1871,6 @@ print(r.json())
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
 <h3 id="4.2-주소-생성하기-responseschema">Response Schema</h3>
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
 
 <h1 id="pocket-api-documentation-5-withdrawal">5. Withdrawal</h1>
 
@@ -2109,11 +2054,6 @@ print(r.json())
 
 <h3 id="5.1-출금-신청-responseschema">Response Schema</h3>
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
 ## 5.2 수수료 추천 (느림, 중간, 빠름) 조회
 
 <a id="opIdgetWithdrawalFee_1"></a>
@@ -2288,11 +2228,6 @@ print(r.json())
 
 <h3 id="5.2-수수료-추천-(느림,-중간,-빠름)-조회-responseschema">Response Schema</h3>
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
 ## 5.3 수수료 재설정
 
 <a id="opIdputTransactionFee_1"></a>
@@ -2455,11 +2390,6 @@ print(r.json())
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
 <h3 id="5.3-수수료-재설정-responseschema">Response Schema</h3>
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
 
 <h1 id="pocket-api-documentation-6-transaction">6. Transaction</h1>
 
@@ -2663,11 +2593,6 @@ print(r.json())
 
 <h3 id="6.1-입출금-내역-전체-목록-조회-responseschema">Response Schema</h3>
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
 ## 6.2 입출금 상세 정보 조회
 
 <a id="opIdgetTransaction_1"></a>
@@ -2834,11 +2759,6 @@ print(r.json())
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
 <h3 id="6.2-입출금-상세-정보-조회-responseschema">Response Schema</h3>
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
 
 <h1 id="pocket-api-documentation-7-nft">7. NFT</h1>
 
@@ -3015,11 +2935,6 @@ print(r.json())
 
 <h3 id="7.1-전체-nft-보유-목록-조회-responseschema">Response Schema</h3>
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
 ## 7.2 NFT 상세 정보 조회
 
 <a id="opIdgetNft"></a>
@@ -3177,11 +3092,6 @@ print(r.json())
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
 <h3 id="7.2-nft-상세-정보-조회-responseschema">Response Schema</h3>
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
 
 ## 7.4 출금 신청
 
@@ -3363,11 +3273,6 @@ print(r.json())
 
 <h3 id="7.4-출금-신청-responseschema">Response Schema</h3>
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
 ## 7.5 수수료 추천 (느림, 중간, 빠름) 조회
 
 <a id="opIdgetWithdrawalFee"></a>
@@ -3542,11 +3447,6 @@ print(r.json())
 
 <h3 id="7.5-수수료-추천-(느림,-중간,-빠름)-조회-responseschema">Response Schema</h3>
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
 ## 7.6 수수료 재설정
 
 <a id="opIdputTransactionFee"></a>
@@ -3709,11 +3609,6 @@ print(r.json())
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
 <h3 id="7.6-수수료-재설정-responseschema">Response Schema</h3>
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
 
 ## 7.7 NFT 전체 입출금 현황 조회
 
@@ -3909,11 +3804,6 @@ print(r.json())
 
 <h3 id="7.7-nft-전체-입출금-현황-조회-responseschema">Response Schema</h3>
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
 ## 7.8 NFT 입출금 상세 정보 조회
 
 <a id="opIdgetTransaction"></a>
@@ -4079,11 +3969,6 @@ print(r.json())
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
 <h3 id="7.8-nft-입출금-상세-정보-조회-responseschema">Response Schema</h3>
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
 
 # Schemas
 
