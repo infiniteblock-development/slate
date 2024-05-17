@@ -28,7 +28,7 @@ generator: widdershins v4.0.1
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
-Pocket API 문서
+여기에 가이드 라인
 
 Base URLs:
 
@@ -210,342 +210,7 @@ x-api-key
 
 <h1 id="pocket-api-documentation-2-coin-token">2. Coin/Token</h1>
 
-## 2.1 지원하는 토큰 전체 목록 조회
-
-<a id="opIdgetPocketCoins"></a>
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins \
-  -H 'Accept: application/json' \
-  -H 'x-api-key: API_KEY'
-
-```
-
-```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
-
-```javascript
-
-const headers = {
-  'Accept':'application/json',
-  'x-api-key':'API_KEY'
-};
-
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins',
-{
-  method: 'GET',
-
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json',
-  'x-api-key' => 'API_KEY'
-}
-
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```php
-<?php
-
-require 'vendor/autoload.php';
-
-$headers = array(
-    'Accept' => 'application/json',
-    'x-api-key' => 'API_KEY',
-);
-
-$client = new \GuzzleHttp\Client();
-
-// Define array of request body.
-$request_body = array();
-
-try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins', array(
-        'headers' => $headers,
-        'json' => $request_body,
-       )
-    );
-    print_r($response->getBody()->getContents());
- }
- catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    // handle exception or api errors.
-    print_r($e->getMessage());
- }
-
- // ...
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json',
-  'x-api-key': 'API_KEY'
-}
-
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins', headers = headers)
-
-print(r.json())
-
-```
-
-`GET /coins`
-
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
-- 지원되는 코인 전체 목록 조회
-    - 지원 상태: 지원, 미지원, 미표시 전부 출력
-- Sort 기준(Default): 최초 등록 일시 기준으로 내림 차순
-
-<h3 id="2.1-지원하는-토큰-전체-목록-조회-parameters">Parameters</h3>
-
-|Name|In|Type|Required|Description|Examples|
-|---|---|---|---|---|---|
-|status|query|string|false|코인 지원 상태|SUPPORT|
-|page|query|int|false|페이지 번호|2|
-|size|query|int|false|페이지 크기|15|
-|sort|query|string|false|정렬 기준|COIN_CREATED_DT,DESC|
-
-#### Enumerated Values
-
-|Parameter|Value|
-|---|---|
-|status|SUPPORT|
-|status|STOP|
-|status|HIDING|
-|status|DELETED|
-
-> Example responses
-
-> 200 Response
-
-```json
-{
-  "count": 12,
-  "coins": [
-    {
-      "coinDisplayId": "8130e0f5-64b6-48c0-a10c-1d1d668810e5",
-      "koreanName": "이더리움",
-      "englishName": "Ethereum",
-      "symbol": "ETH",
-      "networkName": "이더리움 메인넷",
-      "status": "SUPPORT",
-      "secondAddress": false,
-      "contractAddress": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
-    }
-  ]
-}
-```
-
-<h3 id="2.1-지원하는-토큰-전체-목록-조회-responses">Responses</h3>
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[지원 코인 리스트 응답](#schema지원 코인 리스트 응답)|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
-|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
-
-<h3 id="2.1-지원하는-토큰-전체-목록-조회-responseschema">Response Schema</h3>
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
-## 2.2 지원하는 토큰 상세 정보 조회
-
-<a id="opIdgetPocketCoinByCoinDisplayId"></a>
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins/{coinDisplayId} \
-  -H 'Accept: application/json' \
-  -H 'x-api-key: API_KEY'
-
-```
-
-```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins/{coinDisplayId}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
-
-```javascript
-
-const headers = {
-  'Accept':'application/json',
-  'x-api-key':'API_KEY'
-};
-
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins/{coinDisplayId}',
-{
-  method: 'GET',
-
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json',
-  'x-api-key' => 'API_KEY'
-}
-
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins/{coinDisplayId}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```php
-<?php
-
-require 'vendor/autoload.php';
-
-$headers = array(
-    'Accept' => 'application/json',
-    'x-api-key' => 'API_KEY',
-);
-
-$client = new \GuzzleHttp\Client();
-
-// Define array of request body.
-$request_body = array();
-
-try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins/{coinDisplayId}', array(
-        'headers' => $headers,
-        'json' => $request_body,
-       )
-    );
-    print_r($response->getBody()->getContents());
- }
- catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    // handle exception or api errors.
-    print_r($e->getMessage());
- }
-
- // ...
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json',
-  'x-api-key': 'API_KEY'
-}
-
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins/{coinDisplayId}', headers = headers)
-
-print(r.json())
-
-```
-
-`GET /coins/{coinDisplayId}`
-
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
-- 특정 코인에 대해 상세 정보 조회 가능
-
-<h3 id="2.2-지원하는-토큰-상세-정보-조회-parameters">Parameters</h3>
-
-|Name|In|Type|Required|Description|Examples|
-|---|---|---|---|---|---|
-|coinDisplayId|path|string|true|코인 ID|9dae86ce-958e-47bb-9681-ae5e8e91c48d|
-
-> Example responses
-
-> 200 Response
-
-```json
-{
-  "coinDisplayId": "8130e0f5-64b6-48c0-a10c-1d1d668810e5",
-  "koreanName": "이더리움",
-  "englishName": "Ethereum",
-  "symbol": "ETH",
-  "networkName": "이더리움 메인넷",
-  "status": "SUPPORT",
-  "secondAddress": false,
-  "contractAddress": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
-}
-```
-
-<h3 id="2.2-지원하는-토큰-상세-정보-조회-responses">Responses</h3>
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[지원 코인 응답](#schema지원 코인 응답)|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
-|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
-
-<h3 id="2.2-지원하는-토큰-상세-정보-조회-responseschema">Response Schema</h3>
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
-## 2.3 토큰 심볼별로 원화 가격 정보 조회
+## 2.1 토큰 심볼별로 원화 가격 정보 조회
 
 <a id="opIdgetPocketCoinsCurrency"></a>
 
@@ -668,7 +333,7 @@ print(r.json())
     - (업비트,빗썸, OKX, 코인게코, Kucoin, bitstamp, bitfinex,huobi) 평균가 적용
     - USD 가격은 KRW 환산 후 계산
 
-<h3 id="2.3-토큰-심볼별로-원화-가격-정보-조회-parameters">Parameters</h3>
+<h3 id="2.1-토큰-심볼별로-원화-가격-정보-조회-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|Examples|
 |---|---|---|---|---|---|
@@ -691,7 +356,7 @@ print(r.json())
 ]
 ```
 
-<h3 id="2.3-토큰-심볼별로-원화-가격-정보-조회-responses">Responses</h3>
+<h3 id="2.1-토큰-심볼별로-원화-가격-정보-조회-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -699,7 +364,7 @@ print(r.json())
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
-<h3 id="2.3-토큰-심볼별로-원화-가격-정보-조회-responseschema">Response Schema</h3>
+<h3 id="2.1-토큰-심볼별로-원화-가격-정보-조회-responseschema">Response Schema</h3>
 
 Status Code **200**
 
@@ -1055,7 +720,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="3.2-지갑-생성-responses">Responses</h3>
@@ -1220,7 +889,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="3.3-지갑-내-자산-추가하기-responses">Responses</h3>
@@ -1566,7 +1239,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="3.5-지갑-정보-변경-responses">Responses</h3>
@@ -1716,7 +1393,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="3.7-지갑-삭제하기-responses">Responses</h3>
@@ -2224,7 +1905,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="4.2-주소-생성하기-responses">Responses</h3>
@@ -2407,7 +2092,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="5.1-출금-신청-responses">Responses</h3>
@@ -2606,7 +2295,7 @@ x-api-key
 
 ## 5.3 수수료 재설정
 
-<a id="opIdputTransactionFee"></a>
+<a id="opIdputTransactionFee_1"></a>
 
 > Code samples
 
@@ -2750,7 +2439,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="5.3-수수료-재설정-responses">Responses</h3>
@@ -3490,177 +3183,6 @@ To perform this operation, you must be authenticated by means of one of the foll
 x-api-key
 </aside>
 
-## 7.4 NFT 입출금 상세 정보 조회
-
-<a id="opIdgetTransaction"></a>
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId} \
-  -H 'Accept: application/json' \
-  -H 'x-api-key: API_KEY'
-
-```
-
-```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
-
-```javascript
-
-const headers = {
-  'Accept':'application/json',
-  'x-api-key':'API_KEY'
-};
-
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}',
-{
-  method: 'GET',
-
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Accept' => 'application/json',
-  'x-api-key' => 'API_KEY'
-}
-
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-
-```
-
-```php
-<?php
-
-require 'vendor/autoload.php';
-
-$headers = array(
-    'Accept' => 'application/json',
-    'x-api-key' => 'API_KEY',
-);
-
-$client = new \GuzzleHttp\Client();
-
-// Define array of request body.
-$request_body = array();
-
-try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}', array(
-        'headers' => $headers,
-        'json' => $request_body,
-       )
-    );
-    print_r($response->getBody()->getContents());
- }
- catch (\GuzzleHttp\Exception\BadResponseException $e) {
-    // handle exception or api errors.
-    print_r($e->getMessage());
- }
-
- // ...
-
-```
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json',
-  'x-api-key': 'API_KEY'
-}
-
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}', headers = headers)
-
-print(r.json())
-
-```
-
-`GET /nft-transactions/{transactionDisplayId}`
-
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
-- NFT 상세 정보 조회 가능
-
-<h3 id="7.4-nft-입출금-상세-정보-조회-parameters">Parameters</h3>
-
-|Name|In|Type|Required|Description|Examples|
-|---|---|---|---|---|---|
-|transactionDisplayId|path|string|true|트랜잭션 ID|b9fa192c-56c5-4cf2-a8ac-d65fd94bbc73|
-
-> Example responses
-
-> 200 Response
-
-```json
-{
-  "transactionDisplayId": "958b197a-c774-48c1-a391-8836db8813ba",
-  "walletName": "사내용 지갑",
-  "nftName": "29",
-  "symbol": "JINU",
-  "network": "HOLESKY",
-  "type": "WITHDRAW",
-  "stat": "COMPLETE_WITHDRAW",
-  "transactionHash": "0xadcbfac94920d2552ffc521711b634b473cf23551423344ff7f163c723580dbd",
-  "amount": 1,
-  "fee": 0.000096178991457065,
-  "usdToKrw": 1380.6,
-  "amountKrw": 0,
-  "feeKrw": 434,
-  "completedAt": "2019-08-24T14:15:22Z",
-  "counterparties": [
-    {
-      "address": "0x9F1229D97F17BB45f4598195B36b667b01Bc6495",
-      "dstTag": "string",
-      "amount": 0.001
-    }
-  ]
-}
-```
-
-<h3 id="7.4-nft-입출금-상세-정보-조회-responses">Responses</h3>
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[NFT 트랜잭션 조회 응답](#schemanft 트랜잭션 조회 응답)|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
-|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
-
-<h3 id="7.4-nft-입출금-상세-정보-조회-responseschema">Response Schema</h3>
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-x-api-key
-</aside>
-
 ## 7.4 출금 신청
 
 <a id="opIdpostWithdraw"></a>
@@ -3824,7 +3346,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="7.4-출금-신청-responses">Responses</h3>
@@ -4015,6 +3541,174 @@ print(r.json())
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
 <h3 id="7.5-수수료-추천-(느림,-중간,-빠름)-조회-responseschema">Response Schema</h3>
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+x-api-key
+</aside>
+
+## 7.6 수수료 재설정
+
+<a id="opIdputTransactionFee"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'x-api-key: API_KEY'
+
+```
+
+```java
+URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```javascript
+const inputBody = '{
+  "accelerateFee": 0.0001
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'application/json',
+  'x-api-key':'API_KEY'
+};
+
+fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json',
+  'x-api-key' => 'API_KEY'
+}
+
+result = RestClient.post 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'application/json',
+    'x-api-key' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'x-api-key': 'API_KEY'
+}
+
+r = requests.post('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee', headers = headers)
+
+print(r.json())
+
+```
+
+`POST /nfts/-/withdrawals/{transactionDisplayId}/replace-fee`
+
+- 수수료 재설정 값: 수수료 설정 값의 150%, 현재 기준 처리 속도 빠름 수수료 중에 높은 값을 제공
+- 수수료 설정 기본값은 150% 그리고 수정이 가능
+
+> Body parameter
+
+```json
+{
+  "accelerateFee": 0.0001
+}
+```
+
+<h3 id="7.6-수수료-재설정-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|Examples|
+|---|---|---|---|---|---|
+|transactionDisplayId|path|string|true|트랜잭션 ID|b0797a66-37d3-4d88-8351-7810c6561858|
+|body|body|[자산 출금 수수료 재설정 요청](#schema자산 출금 수수료 재설정 요청)|true|none|none|
+
+> Example responses
+
+> 400 Response
+
+```json
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
+```
+
+<h3 id="7.6-수수료-재설정-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
+|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
+
+<h3 id="7.6-수수료-재설정-responseschema">Response Schema</h3>
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -4214,6 +3908,177 @@ print(r.json())
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
 <h3 id="7.7-nft-전체-입출금-현황-조회-responseschema">Response Schema</h3>
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+x-api-key
+</aside>
+
+## 7.8 NFT 입출금 상세 정보 조회
+
+<a id="opIdgetTransaction"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId} \
+  -H 'Accept: application/json' \
+  -H 'x-api-key: API_KEY'
+
+```
+
+```java
+URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'application/json',
+  'x-api-key':'API_KEY'
+};
+
+fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json',
+  'x-api-key' => 'API_KEY'
+}
+
+result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'application/json',
+    'x-api-key' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json',
+  'x-api-key': 'API_KEY'
+}
+
+r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}', headers = headers)
+
+print(r.json())
+
+```
+
+`GET /nft-transactions/{transactionDisplayId}`
+
+- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
+- API 키가 활성화 상태인 경우에만 조회 가능
+- NFT 상세 정보 조회 가능
+
+<h3 id="7.8-nft-입출금-상세-정보-조회-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|Examples|
+|---|---|---|---|---|---|
+|transactionDisplayId|path|string|true|트랜잭션 ID|b9fa192c-56c5-4cf2-a8ac-d65fd94bbc73|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "transactionDisplayId": "958b197a-c774-48c1-a391-8836db8813ba",
+  "walletName": "사내용 지갑",
+  "nftName": "29",
+  "symbol": "JINU",
+  "network": "HOLESKY",
+  "type": "WITHDRAW",
+  "stat": "COMPLETE_WITHDRAW",
+  "transactionHash": "0xadcbfac94920d2552ffc521711b634b473cf23551423344ff7f163c723580dbd",
+  "amount": 1,
+  "fee": 0.000096178991457065,
+  "usdToKrw": 1380.6,
+  "amountKrw": 0,
+  "feeKrw": 434,
+  "completedAt": "2019-08-24T14:15:22Z",
+  "counterparties": [
+    {
+      "address": "0x9F1229D97F17BB45f4598195B36b667b01Bc6495",
+      "dstTag": "string",
+      "amount": 0.001
+    }
+  ]
+}
+```
+
+<h3 id="7.8-nft-입출금-상세-정보-조회-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[NFT 트랜잭션 조회 응답](#schemanft 트랜잭션 조회 응답)|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
+|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
+
+<h3 id="7.8-nft-입출금-상세-정보-조회-responseschema">Response Schema</h3>
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -4487,6 +4352,26 @@ x-api-key
 |standard|number|false|STANDARD 수수료(개)|
 |slow|number|false|SLOW 수수료(개)|
 
+<h2 id="tocS_자산 출금 수수료 재설정 요청">자산 출금 수수료 재설정 요청</h2>
+
+<a id="schema자산 출금 수수료 재설정 요청"></a>
+<a id="schema_자산 출금 수수료 재설정 요청"></a>
+<a id="tocS자산 출금 수수료 재설정 요청"></a>
+<a id="tocs자산 출금 수수료 재설정 요청"></a>
+
+```json
+{
+  "accelerateFee": 0.0001
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|accelerateFee|number|true|자산 출금 수수료 재설정 요청|
+
 <h2 id="tocS_자산 입금 받을 주소 요청">자산 입금 받을 주소 요청</h2>
 
 <a id="schema자산 입금 받을 주소 요청"></a>
@@ -4598,26 +4483,6 @@ x-api-key
 |address|string|true|입금 받을 주소|
 |dstTag|string|false|입금 받을 주소 태그|
 |amount|number|true|입금 양|
-
-<h2 id="tocS_자산 출금 수수료 재설정 요청">자산 출금 수수료 재설정 요청</h2>
-
-<a id="schema자산 출금 수수료 재설정 요청"></a>
-<a id="schema_자산 출금 수수료 재설정 요청"></a>
-<a id="tocS자산 출금 수수료 재설정 요청"></a>
-<a id="tocs자산 출금 수수료 재설정 요청"></a>
-
-```json
-{
-  "accelerateFee": 0.0001
-}
-
-```
-
-### Properties
-
-|Name|Type|Required|Description|
-|---|---|---|---|
-|accelerateFee|number|true|자산 출금 수수료 재설정 요청|
 
 <h2 id="tocS_자산 조회 응답">자산 조회 응답</h2>
 
@@ -5154,82 +5019,6 @@ x-api-key
 |networkName|string|false|지원네트워크 이름|
 |chainDisplayId|string|false|지원네트워크 ID|
 |symbol|string|false|지원네트워크 심볼|
-
-<h2 id="tocS_지원 코인 리스트 응답">지원 코인 리스트 응답</h2>
-
-<a id="schema지원 코인 리스트 응답"></a>
-<a id="schema_지원 코인 리스트 응답"></a>
-<a id="tocS지원 코인 리스트 응답"></a>
-<a id="tocs지원 코인 리스트 응답"></a>
-
-```json
-{
-  "count": 12,
-  "coins": [
-    {
-      "coinDisplayId": "8130e0f5-64b6-48c0-a10c-1d1d668810e5",
-      "koreanName": "이더리움",
-      "englishName": "Ethereum",
-      "symbol": "ETH",
-      "networkName": "이더리움 메인넷",
-      "status": "SUPPORT",
-      "secondAddress": false,
-      "contractAddress": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
-    }
-  ]
-}
-
-```
-
-### Properties
-
-|Name|Type|Required|Description|
-|---|---|---|---|
-|count|integer(int64)|false|전체 개수|
-|coins|[[지원 코인 응답](#schema지원 코인 응답)]|false|none|
-
-<h2 id="tocS_지원 코인 응답">지원 코인 응답</h2>
-
-<a id="schema지원 코인 응답"></a>
-<a id="schema_지원 코인 응답"></a>
-<a id="tocS지원 코인 응답"></a>
-<a id="tocs지원 코인 응답"></a>
-
-```json
-{
-  "coinDisplayId": "8130e0f5-64b6-48c0-a10c-1d1d668810e5",
-  "koreanName": "이더리움",
-  "englishName": "Ethereum",
-  "symbol": "ETH",
-  "networkName": "이더리움 메인넷",
-  "status": "SUPPORT",
-  "secondAddress": false,
-  "contractAddress": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
-}
-
-```
-
-### Properties
-
-|Name|Type|Required|Description|
-|---|---|---|---|
-|coinDisplayId|string|false|코인 ID|
-|koreanName|string|false|코인 한글명|
-|englishName|string|false|코인 영문명|
-|symbol|string|false|코인 심볼|
-|networkName|string|false|네트워크 명|
-|status|string|false|코인 상태|
-|secondAddress|boolean|false|2차 주소 사용 여부|
-|contractAddress|string|false|컨트랙트 주소|
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|status|SUPPORT|
-|status|STOP|
-|status|HIDING|
-|status|DELETED|
 
 <h2 id="tocS_코인별 원화 가격 응답">코인별 원화 가격 응답</h2>
 
