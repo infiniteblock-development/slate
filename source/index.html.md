@@ -1,5 +1,5 @@
 ---
-title: Pocket API Documentation v1.0.0
+title: WaaS API Documentation v1.0.0
 language_tabs:
   - shell: Shell
   - java: Java
@@ -24,11 +24,11 @@ generator: widdershins v4.0.1
 
 ---
 
-<h1 id="pocket-api-documentation">Pocket API Documentation v1.0.0</h1>
+<h1 id="waas-api-documentation">WaaS API Documentation v1.0.0</h1>
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
-여기에 가이드 라인
+WaaS API 문서
 
 Base URLs:
 
@@ -37,9 +37,9 @@ Base URLs:
 # Authentication
 
 * API Key (x-api-key)
-    - Parameter Name: **x-api-key**, in: header. pocket api key
+    - Parameter Name: **x-api-key**, in: header. WaaS api key
 
-<h1 id="pocket-api-documentation-1-network">1. Network</h1>
+<h1 id="waas-api-documentation-1-network">1. Network</h1>
 
 ## 1.1 지원 네트워크 전체 목록 조회
 
@@ -203,7 +203,7 @@ print(r.json())
 
 <h3 id="1.1-지원-네트워크-전체-목록-조회-responseschema">Response Schema</h3>
 
-<h1 id="pocket-api-documentation-2-coin-token">2. Coin/Token</h1>
+<h1 id="waas-api-documentation-2-coin-token">2. Coin/Token</h1>
 
 ## 2.1 토큰 심볼별로 원화 가격 정보 조회
 
@@ -371,7 +371,7 @@ Status Code **200**
 |» symbol|string|false|코인 심볼|
 |» price|number(double)|false|코인 원화 가격|
 
-<h1 id="pocket-api-documentation-3-wallet">3. Wallet</h1>
+<h1 id="waas-api-documentation-3-wallet">3. Wallet</h1>
 
 ## 3.1 전체 지갑 목록 조회
 
@@ -1538,7 +1538,7 @@ Status Code **200**
 |» krwAmount|number|false|자산 코인 원화 가치|
 |» percentage|number|false|자산 코인 비중|
 
-<h1 id="pocket-api-documentation-4-address">4. Address</h1>
+<h1 id="waas-api-documentation-4-address">4. Address</h1>
 
 ## 4.1 주소별로 잔액 조회
 
@@ -1872,7 +1872,7 @@ print(r.json())
 
 <h3 id="4.2-주소-생성하기-responseschema">Response Schema</h3>
 
-<h1 id="pocket-api-documentation-5-withdrawal">5. Withdrawal</h1>
+<h1 id="waas-api-documentation-5-withdrawal">5. Withdrawal</h1>
 
 ## 5.1 출금 신청
 
@@ -2391,7 +2391,7 @@ print(r.json())
 
 <h3 id="5.3-수수료-재설정-responseschema">Response Schema</h3>
 
-<h1 id="pocket-api-documentation-6-transaction">6. Transaction</h1>
+<h1 id="waas-api-documentation-6-transaction">6. Transaction</h1>
 
 ## 6.1 입출금 내역 전체 목록 조회
 
@@ -2760,7 +2760,7 @@ print(r.json())
 
 <h3 id="6.2-입출금-상세-정보-조회-responseschema">Response Schema</h3>
 
-<h1 id="pocket-api-documentation-7-nft">7. NFT</h1>
+<h1 id="waas-api-documentation-7-nft">7. NFT</h1>
 
 ## 7.1 전체 NFT 보유 목록 조회
 
