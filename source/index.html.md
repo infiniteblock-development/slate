@@ -157,13 +157,7 @@ print(r.json())
 
 `GET /networks`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
-- 네트워크 검색 방식
-   - 심볼명으로 조회 가능
-   - 체인 ID로 조회 가능
-   - 네트워크명으로 조회 가능
-- Sort 기준(Default): 영문 기준 A->G ,동일 시 체인 ID 낮은 순 → 높은 순으로 정렬
+WaaS에서 사용할 수 있는 블록체인 네트워크 목록을 조회합니다.
 
 <h3 id="1.1-지원-네트워크-전체-목록-조회-parameters">Parameters</h3>
 
@@ -205,7 +199,7 @@ print(r.json())
 
 <h1 id="waas-api-documentation-2-coin-token">2. Coin/Token</h1>
 
-## 2.1 토큰 심볼별로 원화 가격 정보 조회
+## 2.1 코인/토큰 목록 조회
 
 <a id="opIdgetPocketCoinsCurrency"></a>
 
@@ -321,14 +315,9 @@ print(r.json())
 
 `GET /coins/-/currency`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
-- 가격 정보 기준
-    - 5분 단위로 가격 업데이트
-    - (업비트,빗썸, OKX, 코인게코, Kucoin, bitstamp, bitfinex,huobi) 평균가 적용
-    - USD 가격은 KRW 환산 후 계산
+WaaS에서 사용할 수 있는 코인과 토큰 목록을 조회합니다.
 
-<h3 id="2.1-토큰-심볼별로-원화-가격-정보-조회-parameters">Parameters</h3>
+<h3 id="2.1-코인/토큰-목록-조회-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|Examples|
 |---|---|---|---|---|---|
@@ -351,7 +340,7 @@ print(r.json())
 ]
 ```
 
-<h3 id="2.1-토큰-심볼별로-원화-가격-정보-조회-responses">Responses</h3>
+<h3 id="2.1-코인/토큰-목록-조회-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -359,7 +348,7 @@ print(r.json())
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
-<h3 id="2.1-토큰-심볼별로-원화-가격-정보-조회-responseschema">Response Schema</h3>
+<h3 id="2.1-코인/토큰-목록-조회-responseschema">Response Schema</h3>
 
 Status Code **200**
 
@@ -489,12 +478,7 @@ print(r.json())
 
 `GET /wallets`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
-- 전체 지갑 목록을 조회할 수 있다.
-- 상태별 지갑 목록 조회
-    - 지갑 상태: 정상, 정지, 삭제
-- sort Default:  생성 일 시 기준으로 위->아래 내림차순 정렬
+고객사가 보유한 지갑 목록을 조회합니다.
 
 <h3 id="3.1-전체-지갑-목록-조회-parameters">Parameters</h3>
 
@@ -679,10 +663,7 @@ print(r.json())
 
 `POST /wallets`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 생성 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 생성 가능
-- 지갑 생성 수는 요금제에 설정 제한이 되어있음
-    - 생성 수 초과 시 지갑 생성 불가
+멀티체인 지갑을 생성합니다.
 
 > Body parameter
 
@@ -705,11 +686,7 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
 <h3 id="3.2-지갑-생성-responses">Responses</h3>
@@ -722,7 +699,7 @@ print(r.json())
 
 <h3 id="3.2-지갑-생성-responseschema">Response Schema</h3>
 
-## 3.3 지갑 내 자산 추가하기
+## 3.3 지갑 내 자산 추가
 
 <a id="opIdpostPocketWalletAsset"></a>
 
@@ -845,9 +822,7 @@ print(r.json())
 
 `POST /wallets/{walletDisplayId}/assets`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 생성 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 생성 가능
-- 지갑 내 코인/토큰 자산 주소 등록 가능
+지갑 내 네트워크 추가 또는 토큰 추가합니다.
 
 > Body parameter
 
@@ -857,7 +832,7 @@ print(r.json())
 }
 ```
 
-<h3 id="3.3-지갑-내-자산-추가하기-parameters">Parameters</h3>
+<h3 id="3.3-지갑-내-자산-추가-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|Examples|
 |---|---|---|---|---|---|
@@ -869,14 +844,10 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
-<h3 id="3.3-지갑-내-자산-추가하기-responses">Responses</h3>
+<h3 id="3.3-지갑-내-자산-추가-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -884,7 +855,7 @@ print(r.json())
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
-<h3 id="3.3-지갑-내-자산-추가하기-responseschema">Response Schema</h3>
+<h3 id="3.3-지갑-내-자산-추가-responseschema">Response Schema</h3>
 
 ## 3.4 지갑 상세 정보 조회
 
@@ -1002,9 +973,7 @@ print(r.json())
 
 `GET /wallets/{walletDisplayId}`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
-- 해당 지갑에 상세 정보를 조회할 수 있다.
+지갑 내 자산 정보를 조회합니다.
 
 <h3 id="3.4-지갑-상세-정보-조회-parameters">Parameters</h3>
 
@@ -1183,9 +1152,7 @@ print(r.json())
 
 `POST /wallets/{walletDisplayId}`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 변경 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 변경 가능
-- 지갑명, 지갑 설명만 변경 가능(나머지는 변경 불가)
+지갑명, 지갑 설명, 지갑 상태를 변경합니다.
 
 > Body parameter
 
@@ -1209,11 +1176,7 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
 <h3 id="3.5-지갑-정보-변경-responses">Responses</h3>
@@ -1342,10 +1305,7 @@ print(r.json())
 
 `POST /wallets/{walletDisplayId}/delete`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 삭제 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 삭제 가능
-- 지갑 잔고가 0인 경우에만 삭제 진행 가능.
-- 지갑 삭제가 된 경우 해당 지갑 출금 신청 불가
+지갑을 삭제합니다.
 
 <h3 id="3.7-지갑-삭제하기-parameters">Parameters</h3>
 
@@ -1358,11 +1318,7 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
 <h3 id="3.7-지갑-삭제하기-responses">Responses</h3>
@@ -1375,7 +1331,7 @@ print(r.json())
 
 <h3 id="3.7-지갑-삭제하기-responseschema">Response Schema</h3>
 
-## 3.8 코인/토큰별 원화 기준 자산 비중 조회
+## 3.8 자산 비중 조회
 
 <a id="opIdgetPocketAssetPercentageByCoin"></a>
 
@@ -1491,9 +1447,7 @@ print(r.json())
 
 `GET /wallets/-/percentage`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
-- 그룹에 코인별로 원화 기준으로 자산 비중 % 조회
+코인/토큰별로 자산 비중을 조회합니다.
 
 > Example responses
 
@@ -1514,7 +1468,7 @@ print(r.json())
 ]
 ```
 
-<h3 id="3.8-코인/토큰별-원화-기준-자산-비중-조회-responses">Responses</h3>
+<h3 id="3.8-자산-비중-조회-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1522,7 +1476,7 @@ print(r.json())
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
-<h3 id="3.8-코인/토큰별-원화-기준-자산-비중-조회-responseschema">Response Schema</h3>
+<h3 id="3.8-자산-비중-조회-responseschema">Response Schema</h3>
 
 Status Code **200**
 
@@ -1656,9 +1610,7 @@ print(r.json())
 
 `GET /wallets/-/addresses`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
-- 주소별로 잔액을 조회할 수 있다.
+주소별로 잔액을 조회합니다.
 
 <h3 id="4.1-주소별로-잔액-조회-parameters">Parameters</h3>
 
@@ -1831,8 +1783,7 @@ print(r.json())
 
 `POST /wallets/{walletDisplayId}/addresses`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
+지갑 내 주소를 생성할 수 있습니다.
 - ***1회원 - 1지갑 - 1체인 - N주소 형식***
 
 > Body parameter
@@ -1855,11 +1806,7 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
 <h3 id="4.2-주소-생성하기-responses">Responses</h3>
@@ -2005,9 +1952,7 @@ print(r.json())
 
 `POST /assets/{assetDisplayId}/withdrawals`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 신청 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 신청 가능
-- 지갑 상태가 정상인 경우에만 출금 신청 가능
+코인/토큰 출금을 신청합니다.
 
 > Body parameter
 
@@ -2037,11 +1982,7 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
 <h3 id="5.1-출금-신청-responses">Responses</h3>
@@ -2054,7 +1995,7 @@ print(r.json())
 
 <h3 id="5.1-출금-신청-responseschema">Response Schema</h3>
 
-## 5.2 수수료 추천 (느림, 중간, 빠름) 조회
+## 5.2 네트워크 수수료 조회
 
 <a id="opIdgetWithdrawalFee_1"></a>
 
@@ -2183,7 +2124,8 @@ print(r.json())
 
 `POST /assets/{assetDisplayId}/withdrawals/-/fee`
 
-- 네트워크 상 처리 속도 느림, 중간, 빠름 정보 불러오기
+네트워크 수수료를 조회합니다.
+수수료는 느림, 중간, 빠름 수수료를 조회할 수 있습니다.
 
 > Body parameter
 
@@ -2199,7 +2141,7 @@ print(r.json())
 }
 ```
 
-<h3 id="5.2-수수료-추천-(느림,-중간,-빠름)-조회-parameters">Parameters</h3>
+<h3 id="5.2-네트워크-수수료-조회-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|Examples|
 |---|---|---|---|---|---|
@@ -2218,7 +2160,7 @@ print(r.json())
 }
 ```
 
-<h3 id="5.2-수수료-추천-(느림,-중간,-빠름)-조회-responses">Responses</h3>
+<h3 id="5.2-네트워크-수수료-조회-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -2226,9 +2168,9 @@ print(r.json())
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
-<h3 id="5.2-수수료-추천-(느림,-중간,-빠름)-조회-responseschema">Response Schema</h3>
+<h3 id="5.2-네트워크-수수료-조회-responseschema">Response Schema</h3>
 
-## 5.3 수수료 재설정
+## 5.3 네트워크 수수료 재설정
 
 <a id="opIdputTransactionFee_1"></a>
 
@@ -2351,8 +2293,7 @@ print(r.json())
 
 `POST /assets/-/withdrawals/{transactionDisplayId}/replace-fee`
 
-- 수수료 재설정 값: 수수료 설정 값의 150%, 현재 기준 처리 속도 빠름 수수료 중에 높은 값을 제공
-- 수수료 설정 기본값은 150% 그리고 수정이 가능
+네트워크 수수료를 재설정합니다.
 
 > Body parameter
 
@@ -2362,7 +2303,7 @@ print(r.json())
 }
 ```
 
-<h3 id="5.3-수수료-재설정-parameters">Parameters</h3>
+<h3 id="5.3-네트워크-수수료-재설정-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|Examples|
 |---|---|---|---|---|---|
@@ -2374,14 +2315,10 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
-<h3 id="5.3-수수료-재설정-responses">Responses</h3>
+<h3 id="5.3-네트워크-수수료-재설정-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -2389,11 +2326,11 @@ print(r.json())
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
-<h3 id="5.3-수수료-재설정-responseschema">Response Schema</h3>
+<h3 id="5.3-네트워크-수수료-재설정-responseschema">Response Schema</h3>
 
 <h1 id="waas-api-documentation-6-transaction">6. Transaction</h1>
 
-## 6.1 입출금 내역 전체 목록 조회
+## 6.1 전체 입출금 내역 조회
 
 <a id="opIdgetTransactions_1"></a>
 
@@ -2509,17 +2446,9 @@ print(r.json())
 
 `GET /coin-transactions`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
-- 입출금 상태:
-    - 출금 승인 대기: 네트워크 올라가기 전 상태
-    - 출금 중: 네트워크에 올라간 상태
-    - 출금 실패: 수수료 부족으로 인해 네트워크 실행 실패
-    - 출금 완료: 이더리움은 12컨펌, 비트코인은 6컨펌 완료한 상태
-    - 입금 완료: 이더리움은 12컨펌, 비트코인은 6컨펌 완료한 상태
-- sort 기준(Default): 출금은 출금 신청 일시 기준으로 내림차순, 입금은 입금완료 일시 기준으로 내림차손
+전체 입출금 내역을 조회합니다.
 
-<h3 id="6.1-입출금-내역-전체-목록-조회-parameters">Parameters</h3>
+<h3 id="6.1-전체-입출금-내역-조회-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|Examples|
 |---|---|---|---|---|---|
@@ -2583,7 +2512,7 @@ print(r.json())
 }
 ```
 
-<h3 id="6.1-입출금-내역-전체-목록-조회-responses">Responses</h3>
+<h3 id="6.1-전체-입출금-내역-조회-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -2591,7 +2520,7 @@ print(r.json())
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
-<h3 id="6.1-입출금-내역-전체-목록-조회-responseschema">Response Schema</h3>
+<h3 id="6.1-전체-입출금-내역-조회-responseschema">Response Schema</h3>
 
 ## 6.2 입출금 상세 정보 조회
 
@@ -2709,9 +2638,7 @@ print(r.json())
 
 `GET /coin-transactions/{transactionDisplayId}`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
-- 특정 입출금 건 정보를 조회할 수 있는 기능
+특정 입출금건에 대한 상세 정보를 조회합니다.
 
 <h3 id="6.2-입출금-상세-정보-조회-parameters">Parameters</h3>
 
@@ -2878,9 +2805,7 @@ print(r.json())
 
 `GET /nfts`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
-- Sort 기준(Default): 최신 입금 완료 기준으로 내림차순으로 정렬
+전체 NFT 보유 목록을 조회합니다.
 
 <h3 id="7.1-전체-nft-보유-목록-조회-parameters">Parameters</h3>
 
@@ -3051,9 +2976,7 @@ print(r.json())
 
 `GET /nfts/{nftDisplayIdId}`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
-- NFT 검색 가능
+특정 NFT에 대한 상세 정보를 조회합니다.
 
 <h3 id="7.2-nft-상세-정보-조회-parameters">Parameters</h3>
 
@@ -3093,7 +3016,7 @@ print(r.json())
 
 <h3 id="7.2-nft-상세-정보-조회-responseschema">Response Schema</h3>
 
-## 7.4 출금 신청
+## 7.4 NFT 출금 신청
 
 <a id="opIdpostWithdraw"></a>
 
@@ -3224,9 +3147,7 @@ print(r.json())
 
 `POST /nfts/{nftDisplayId}/withdrawals`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 신청 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 신청 가능
-- 지갑 상태가 정상인 경우에만 출금 신청 가능
+NFT 출금 신청을 합니다.
 
 > Body parameter
 
@@ -3244,7 +3165,7 @@ print(r.json())
 }
 ```
 
-<h3 id="7.4-출금-신청-parameters">Parameters</h3>
+<h3 id="7.4-nft-출금-신청-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|Examples|
 |---|---|---|---|---|---|
@@ -3256,14 +3177,10 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
-<h3 id="7.4-출금-신청-responses">Responses</h3>
+<h3 id="7.4-nft-출금-신청-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -3271,9 +3188,9 @@ print(r.json())
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
-<h3 id="7.4-출금-신청-responseschema">Response Schema</h3>
+<h3 id="7.4-nft-출금-신청-responseschema">Response Schema</h3>
 
-## 7.5 수수료 추천 (느림, 중간, 빠름) 조회
+## 7.5 네트워크 수수료 조회
 
 <a id="opIdgetWithdrawalFee"></a>
 
@@ -3402,7 +3319,8 @@ print(r.json())
 
 `POST /nfts/{nftDisplayId}/withdrawals/-/fee`
 
-- 네트워크 상 처리 속도 느림, 중간, 빠름 정보 불러오기
+네트워크 수수료를 조회합니다.
+수수료는 느림, 중간, 빠름 수수료를 조회할 수 있습니다.
 
 > Body parameter
 
@@ -3418,7 +3336,7 @@ print(r.json())
 }
 ```
 
-<h3 id="7.5-수수료-추천-(느림,-중간,-빠름)-조회-parameters">Parameters</h3>
+<h3 id="7.5-네트워크-수수료-조회-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|Examples|
 |---|---|---|---|---|---|
@@ -3437,7 +3355,7 @@ print(r.json())
 }
 ```
 
-<h3 id="7.5-수수료-추천-(느림,-중간,-빠름)-조회-responses">Responses</h3>
+<h3 id="7.5-네트워크-수수료-조회-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -3445,9 +3363,9 @@ print(r.json())
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
-<h3 id="7.5-수수료-추천-(느림,-중간,-빠름)-조회-responseschema">Response Schema</h3>
+<h3 id="7.5-네트워크-수수료-조회-responseschema">Response Schema</h3>
 
-## 7.6 수수료 재설정
+## 7.6 네트워크 수수료 재설정
 
 <a id="opIdputTransactionFee"></a>
 
@@ -3570,8 +3488,7 @@ print(r.json())
 
 `POST /nfts/-/withdrawals/{transactionDisplayId}/replace-fee`
 
-- 수수료 재설정 값: 수수료 설정 값의 150%, 현재 기준 처리 속도 빠름 수수료 중에 높은 값을 제공
-- 수수료 설정 기본값은 150% 그리고 수정이 가능
+네트워크 수수료를 재설정합니다.
 
 > Body parameter
 
@@ -3581,7 +3498,7 @@ print(r.json())
 }
 ```
 
-<h3 id="7.6-수수료-재설정-parameters">Parameters</h3>
+<h3 id="7.6-네트워크-수수료-재설정-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|Examples|
 |---|---|---|---|---|---|
@@ -3593,14 +3510,10 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
-<h3 id="7.6-수수료-재설정-responses">Responses</h3>
+<h3 id="7.6-네트워크-수수료-재설정-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -3608,7 +3521,7 @@ print(r.json())
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|Inline|
 |500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[ErrorResDTO](#schemaerrorresdto)|
 
-<h3 id="7.6-수수료-재설정-responseschema">Response Schema</h3>
+<h3 id="7.6-네트워크-수수료-재설정-responseschema">Response Schema</h3>
 
 ## 7.7 NFT 전체 입출금 현황 조회
 
@@ -3726,8 +3639,7 @@ print(r.json())
 
 `GET /nft-transactions`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
+NFT 입출금 전체 목록을 조회합니다.
 
 <h3 id="7.7-nft-전체-입출금-현황-조회-parameters">Parameters</h3>
 
@@ -3920,9 +3832,7 @@ print(r.json())
 
 `GET /nft-transactions/{transactionDisplayId}`
 
-- 고객사 그룹 상태가 ‘정상’인 경우에만 조회 가능(나머지 불가)
-- API 키가 활성화 상태인 경우에만 조회 가능
-- NFT 상세 정보 조회 가능
+특정 NFT 입출금건을 상세 정보를 조회합니다.
 
 <h3 id="7.8-nft-입출금-상세-정보-조회-parameters">Parameters</h3>
 
