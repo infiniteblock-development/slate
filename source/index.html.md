@@ -686,7 +686,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="3.2-지갑-생성-responses">Responses</h3>
@@ -844,7 +848,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="3.3-지갑-내-자산-추가-responses">Responses</h3>
@@ -1176,7 +1184,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="3.5-지갑-정보-변경-responses">Responses</h3>
@@ -1318,7 +1330,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="3.7-지갑-삭제하기-responses">Responses</h3>
@@ -1784,7 +1800,8 @@ print(r.json())
 `POST /wallets/{walletDisplayId}/addresses`
 
 지갑 내 주소를 생성할 수 있습니다.
-- ***1회원 - 1지갑 - 1체인 - N주소 형식***
+- 멀티체인 주소 형식
+- 1체인 - N 주소 가능
 
 > Body parameter
 
@@ -1806,7 +1823,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="4.2-주소-생성하기-responses">Responses</h3>
@@ -1982,7 +2003,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="5.1-출금-신청-responses">Responses</h3>
@@ -2315,7 +2340,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="5.3-네트워크-수수료-재설정-responses">Responses</h3>
@@ -3177,7 +3206,11 @@ NFT 출금 신청을 합니다.
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="7.4-nft-출금-신청-responses">Responses</h3>
@@ -3510,7 +3543,11 @@ print(r.json())
 > 400 Response
 
 ```json
-"string"
+{
+  "error": "string",
+  "message": "string",
+  "data": "string"
+}
 ```
 
 <h3 id="7.6-네트워크-수수료-재설정-responses">Responses</h3>
