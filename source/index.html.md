@@ -32,7 +32,7 @@ WaaS API 문서
 
 Base URLs:
 
-* <a href="https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1">https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1</a>
+* <a href="https://waas.karbon.fi">https://waas.karbon.fi</a>
 
 # Authentication
 
@@ -49,14 +49,14 @@ Base URLs:
 
 ```shell
 # You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/networks \
+curl -X GET https://waas.karbon.fi/api/waas/v1/networks \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
 
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/networks");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/networks");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -79,7 +79,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/networks',
+fetch('https://waas.karbon.fi/api/waas/v1/networks',
 {
   method: 'GET',
 
@@ -102,7 +102,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/networks',
+result = RestClient.get 'https://waas.karbon.fi/api/waas/v1/networks',
   params: {
   }, headers: headers
 
@@ -126,7 +126,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/networks', array(
+    $response = $client->request('GET','https://waas.karbon.fi/api/waas/v1/networks', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -149,13 +149,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/networks', headers = headers)
+r = requests.get('https://waas.karbon.fi/api/waas/v1/networks', headers = headers)
 
 print(r.json())
 
 ```
 
-`GET /networks`
+`GET /api/waas/v1/networks`
 
 WaaS에서 사용할 수 있는 블록체인 네트워크 목록을 조회합니다.
 
@@ -207,14 +207,14 @@ WaaS에서 사용할 수 있는 블록체인 네트워크 목록을 조회합니
 
 ```shell
 # You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins/-/currency \
+curl -X GET https://waas.karbon.fi/api/waas/v1/coins/-/currency \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
 
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins/-/currency");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/coins/-/currency");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -237,7 +237,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins/-/currency',
+fetch('https://waas.karbon.fi/api/waas/v1/coins/-/currency',
 {
   method: 'GET',
 
@@ -260,7 +260,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins/-/currency',
+result = RestClient.get 'https://waas.karbon.fi/api/waas/v1/coins/-/currency',
   params: {
   }, headers: headers
 
@@ -284,7 +284,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins/-/currency', array(
+    $response = $client->request('GET','https://waas.karbon.fi/api/waas/v1/coins/-/currency', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -307,13 +307,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coins/-/currency', headers = headers)
+r = requests.get('https://waas.karbon.fi/api/waas/v1/coins/-/currency', headers = headers)
 
 print(r.json())
 
 ```
 
-`GET /coins/-/currency`
+`GET /api/waas/v1/coins/-/currency`
 
 WaaS에서 사용할 수 있는 코인과 토큰 목록을 조회합니다.
 
@@ -370,14 +370,14 @@ Status Code **200**
 
 ```shell
 # You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets \
+curl -X GET https://waas.karbon.fi/api/waas/v1/wallets \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
 
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/wallets");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -400,7 +400,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets',
+fetch('https://waas.karbon.fi/api/waas/v1/wallets',
 {
   method: 'GET',
 
@@ -423,7 +423,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets',
+result = RestClient.get 'https://waas.karbon.fi/api/waas/v1/wallets',
   params: {
   }, headers: headers
 
@@ -447,7 +447,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets', array(
+    $response = $client->request('GET','https://waas.karbon.fi/api/waas/v1/wallets', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -470,13 +470,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets', headers = headers)
+r = requests.get('https://waas.karbon.fi/api/waas/v1/wallets', headers = headers)
 
 print(r.json())
 
 ```
 
-`GET /wallets`
+`GET /api/waas/v1/wallets`
 
 고객사가 보유한 지갑 목록을 조회합니다.
 
@@ -546,7 +546,7 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets \
+curl -X POST https://waas.karbon.fi/api/waas/v1/wallets \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
@@ -554,7 +554,7 @@ curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets \
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/wallets");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -582,7 +582,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets',
+fetch('https://waas.karbon.fi/api/waas/v1/wallets',
 {
   method: 'POST',
   body: inputBody,
@@ -606,7 +606,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.post 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets',
+result = RestClient.post 'https://waas.karbon.fi/api/waas/v1/wallets',
   params: {
   }, headers: headers
 
@@ -631,7 +631,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets', array(
+    $response = $client->request('POST','https://waas.karbon.fi/api/waas/v1/wallets', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -655,13 +655,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.post('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets', headers = headers)
+r = requests.post('https://waas.karbon.fi/api/waas/v1/wallets', headers = headers)
 
 print(r.json())
 
 ```
 
-`POST /wallets`
+`POST /api/waas/v1/wallets`
 
 멀티체인 지갑을 생성합니다.
 
@@ -686,11 +686,7 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
 <h3 id="3.2-지갑-생성-responses">Responses</h3>
@@ -711,7 +707,7 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/assets \
+curl -X POST https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/assets \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
@@ -719,7 +715,7 @@ curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/assets");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/assets");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -745,7 +741,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/assets',
+fetch('https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/assets',
 {
   method: 'POST',
   body: inputBody,
@@ -769,7 +765,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.post 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/assets',
+result = RestClient.post 'https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/assets',
   params: {
   }, headers: headers
 
@@ -794,7 +790,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/assets', array(
+    $response = $client->request('POST','https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/assets', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -818,13 +814,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.post('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/assets', headers = headers)
+r = requests.post('https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/assets', headers = headers)
 
 print(r.json())
 
 ```
 
-`POST /wallets/{walletDisplayId}/assets`
+`POST /api/waas/v1/wallets/{walletDisplayId}/assets`
 
 지갑 내 네트워크 추가 또는 토큰 추가합니다.
 
@@ -848,11 +844,7 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
 <h3 id="3.3-지갑-내-자산-추가-responses">Responses</h3>
@@ -873,14 +865,14 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId} \
+curl -X GET https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId} \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
 
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -903,7 +895,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}',
+fetch('https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}',
 {
   method: 'GET',
 
@@ -926,7 +918,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}',
+result = RestClient.get 'https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}',
   params: {
   }, headers: headers
 
@@ -950,7 +942,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}', array(
+    $response = $client->request('GET','https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -973,13 +965,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}', headers = headers)
+r = requests.get('https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}', headers = headers)
 
 print(r.json())
 
 ```
 
-`GET /wallets/{walletDisplayId}`
+`GET /api/waas/v1/wallets/{walletDisplayId}`
 
 지갑 내 자산 정보를 조회합니다.
 
@@ -1043,7 +1035,7 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId} \
+curl -X POST https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
@@ -1051,7 +1043,7 @@ curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -1079,7 +1071,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}',
+fetch('https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}',
 {
   method: 'POST',
   body: inputBody,
@@ -1103,7 +1095,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.post 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}',
+result = RestClient.post 'https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}',
   params: {
   }, headers: headers
 
@@ -1128,7 +1120,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}', array(
+    $response = $client->request('POST','https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1152,13 +1144,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.post('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}', headers = headers)
+r = requests.post('https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}', headers = headers)
 
 print(r.json())
 
 ```
 
-`POST /wallets/{walletDisplayId}`
+`POST /api/waas/v1/wallets/{walletDisplayId}`
 
 지갑명, 지갑 설명, 지갑 상태를 변경합니다.
 
@@ -1184,11 +1176,7 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
 <h3 id="3.5-지갑-정보-변경-responses">Responses</h3>
@@ -1209,14 +1197,14 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/delete \
+curl -X POST https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/delete \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
 
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/delete");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/delete");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -1239,7 +1227,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/delete',
+fetch('https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/delete',
 {
   method: 'POST',
 
@@ -1262,7 +1250,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.post 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/delete',
+result = RestClient.post 'https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/delete',
   params: {
   }, headers: headers
 
@@ -1286,7 +1274,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/delete', array(
+    $response = $client->request('POST','https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/delete', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1309,13 +1297,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.post('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/delete', headers = headers)
+r = requests.post('https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/delete', headers = headers)
 
 print(r.json())
 
 ```
 
-`POST /wallets/{walletDisplayId}/delete`
+`POST /api/waas/v1/wallets/{walletDisplayId}/delete`
 
 지갑을 삭제합니다.
 
@@ -1330,11 +1318,7 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
 <h3 id="3.7-지갑-삭제하기-responses">Responses</h3>
@@ -1355,14 +1339,14 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/-/percentage \
+curl -X GET https://waas.karbon.fi/api/waas/v1/wallets/-/percentage \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
 
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/-/percentage");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/wallets/-/percentage");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -1385,7 +1369,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/-/percentage',
+fetch('https://waas.karbon.fi/api/waas/v1/wallets/-/percentage',
 {
   method: 'GET',
 
@@ -1408,7 +1392,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/-/percentage',
+result = RestClient.get 'https://waas.karbon.fi/api/waas/v1/wallets/-/percentage',
   params: {
   }, headers: headers
 
@@ -1432,7 +1416,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/-/percentage', array(
+    $response = $client->request('GET','https://waas.karbon.fi/api/waas/v1/wallets/-/percentage', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1455,13 +1439,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/-/percentage', headers = headers)
+r = requests.get('https://waas.karbon.fi/api/waas/v1/wallets/-/percentage', headers = headers)
 
 print(r.json())
 
 ```
 
-`GET /wallets/-/percentage`
+`GET /api/waas/v1/wallets/-/percentage`
 
 코인/토큰별로 자산 비중을 조회합니다.
 
@@ -1518,14 +1502,14 @@ Status Code **200**
 
 ```shell
 # You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/-/addresses \
+curl -X GET https://waas.karbon.fi/api/waas/v1/wallets/-/addresses \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
 
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/-/addresses");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/wallets/-/addresses");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -1548,7 +1532,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/-/addresses',
+fetch('https://waas.karbon.fi/api/waas/v1/wallets/-/addresses',
 {
   method: 'GET',
 
@@ -1571,7 +1555,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/-/addresses',
+result = RestClient.get 'https://waas.karbon.fi/api/waas/v1/wallets/-/addresses',
   params: {
   }, headers: headers
 
@@ -1595,7 +1579,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/-/addresses', array(
+    $response = $client->request('GET','https://waas.karbon.fi/api/waas/v1/wallets/-/addresses', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1618,13 +1602,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/-/addresses', headers = headers)
+r = requests.get('https://waas.karbon.fi/api/waas/v1/wallets/-/addresses', headers = headers)
 
 print(r.json())
 
 ```
 
-`GET /wallets/-/addresses`
+`GET /api/waas/v1/wallets/-/addresses`
 
 주소별로 잔액을 조회합니다.
 
@@ -1684,7 +1668,7 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/addresses \
+curl -X POST https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/addresses \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
@@ -1692,7 +1676,7 @@ curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/addresses");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/addresses");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -1718,7 +1702,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/addresses',
+fetch('https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/addresses',
 {
   method: 'POST',
   body: inputBody,
@@ -1742,7 +1726,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.post 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/addresses',
+result = RestClient.post 'https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/addresses',
   params: {
   }, headers: headers
 
@@ -1767,7 +1751,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/addresses', array(
+    $response = $client->request('POST','https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/addresses', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1791,13 +1775,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.post('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/wallets/{walletDisplayId}/addresses', headers = headers)
+r = requests.post('https://waas.karbon.fi/api/waas/v1/wallets/{walletDisplayId}/addresses', headers = headers)
 
 print(r.json())
 
 ```
 
-`POST /wallets/{walletDisplayId}/addresses`
+`POST /api/waas/v1/wallets/{walletDisplayId}/addresses`
 
 지갑 내 주소를 생성할 수 있습니다.
 - 멀티체인 주소 형식
@@ -1823,11 +1807,7 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
 <h3 id="4.2-주소-생성하기-responses">Responses</h3>
@@ -1850,7 +1830,7 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/{assetDisplayId}/withdrawals \
+curl -X POST https://waas.karbon.fi/api/waas/v1/assets/{assetDisplayId}/withdrawals \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
@@ -1858,7 +1838,7 @@ curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/{a
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/{assetDisplayId}/withdrawals");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/assets/{assetDisplayId}/withdrawals");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -1892,7 +1872,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/{assetDisplayId}/withdrawals',
+fetch('https://waas.karbon.fi/api/waas/v1/assets/{assetDisplayId}/withdrawals',
 {
   method: 'POST',
   body: inputBody,
@@ -1916,7 +1896,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.post 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/{assetDisplayId}/withdrawals',
+result = RestClient.post 'https://waas.karbon.fi/api/waas/v1/assets/{assetDisplayId}/withdrawals',
   params: {
   }, headers: headers
 
@@ -1941,7 +1921,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/{assetDisplayId}/withdrawals', array(
+    $response = $client->request('POST','https://waas.karbon.fi/api/waas/v1/assets/{assetDisplayId}/withdrawals', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -1965,13 +1945,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.post('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/{assetDisplayId}/withdrawals', headers = headers)
+r = requests.post('https://waas.karbon.fi/api/waas/v1/assets/{assetDisplayId}/withdrawals', headers = headers)
 
 print(r.json())
 
 ```
 
-`POST /assets/{assetDisplayId}/withdrawals`
+`POST /api/waas/v1/assets/{assetDisplayId}/withdrawals`
 
 코인/토큰 출금을 신청합니다.
 
@@ -2003,11 +1983,7 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
 <h3 id="5.1-출금-신청-responses">Responses</h3>
@@ -2028,7 +2004,7 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/{assetDisplayId}/withdrawals/-/fee \
+curl -X POST https://waas.karbon.fi/api/waas/v1/assets/{assetDisplayId}/withdrawals/-/fee \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
@@ -2036,7 +2012,7 @@ curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/{a
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/{assetDisplayId}/withdrawals/-/fee");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/assets/{assetDisplayId}/withdrawals/-/fee");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -2068,7 +2044,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/{assetDisplayId}/withdrawals/-/fee',
+fetch('https://waas.karbon.fi/api/waas/v1/assets/{assetDisplayId}/withdrawals/-/fee',
 {
   method: 'POST',
   body: inputBody,
@@ -2092,7 +2068,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.post 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/{assetDisplayId}/withdrawals/-/fee',
+result = RestClient.post 'https://waas.karbon.fi/api/waas/v1/assets/{assetDisplayId}/withdrawals/-/fee',
   params: {
   }, headers: headers
 
@@ -2117,7 +2093,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/{assetDisplayId}/withdrawals/-/fee', array(
+    $response = $client->request('POST','https://waas.karbon.fi/api/waas/v1/assets/{assetDisplayId}/withdrawals/-/fee', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -2141,13 +2117,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.post('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/{assetDisplayId}/withdrawals/-/fee', headers = headers)
+r = requests.post('https://waas.karbon.fi/api/waas/v1/assets/{assetDisplayId}/withdrawals/-/fee', headers = headers)
 
 print(r.json())
 
 ```
 
-`POST /assets/{assetDisplayId}/withdrawals/-/fee`
+`POST /api/waas/v1/assets/{assetDisplayId}/withdrawals/-/fee`
 
 네트워크 수수료를 조회합니다.
 수수료는 느림, 중간, 빠름 수수료를 조회할 수 있습니다.
@@ -2203,7 +2179,7 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/-/withdrawals/{transactionDisplayId}/replace-fee \
+curl -X POST https://waas.karbon.fi/api/waas/v1/assets/-/withdrawals/{transactionDisplayId}/replace-fee \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
@@ -2211,7 +2187,7 @@ curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/-/
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/-/withdrawals/{transactionDisplayId}/replace-fee");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/assets/-/withdrawals/{transactionDisplayId}/replace-fee");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -2237,7 +2213,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/-/withdrawals/{transactionDisplayId}/replace-fee',
+fetch('https://waas.karbon.fi/api/waas/v1/assets/-/withdrawals/{transactionDisplayId}/replace-fee',
 {
   method: 'POST',
   body: inputBody,
@@ -2261,7 +2237,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.post 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/-/withdrawals/{transactionDisplayId}/replace-fee',
+result = RestClient.post 'https://waas.karbon.fi/api/waas/v1/assets/-/withdrawals/{transactionDisplayId}/replace-fee',
   params: {
   }, headers: headers
 
@@ -2286,7 +2262,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/-/withdrawals/{transactionDisplayId}/replace-fee', array(
+    $response = $client->request('POST','https://waas.karbon.fi/api/waas/v1/assets/-/withdrawals/{transactionDisplayId}/replace-fee', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -2310,13 +2286,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.post('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/assets/-/withdrawals/{transactionDisplayId}/replace-fee', headers = headers)
+r = requests.post('https://waas.karbon.fi/api/waas/v1/assets/-/withdrawals/{transactionDisplayId}/replace-fee', headers = headers)
 
 print(r.json())
 
 ```
 
-`POST /assets/-/withdrawals/{transactionDisplayId}/replace-fee`
+`POST /api/waas/v1/assets/-/withdrawals/{transactionDisplayId}/replace-fee`
 
 네트워크 수수료를 재설정합니다.
 
@@ -2340,11 +2316,7 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
 <h3 id="5.3-네트워크-수수료-재설정-responses">Responses</h3>
@@ -2367,14 +2339,14 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coin-transactions \
+curl -X GET https://waas.karbon.fi/api/waas/v1/coin-transactions \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
 
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coin-transactions");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/coin-transactions");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -2397,7 +2369,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coin-transactions',
+fetch('https://waas.karbon.fi/api/waas/v1/coin-transactions',
 {
   method: 'GET',
 
@@ -2420,7 +2392,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coin-transactions',
+result = RestClient.get 'https://waas.karbon.fi/api/waas/v1/coin-transactions',
   params: {
   }, headers: headers
 
@@ -2444,7 +2416,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coin-transactions', array(
+    $response = $client->request('GET','https://waas.karbon.fi/api/waas/v1/coin-transactions', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -2467,13 +2439,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coin-transactions', headers = headers)
+r = requests.get('https://waas.karbon.fi/api/waas/v1/coin-transactions', headers = headers)
 
 print(r.json())
 
 ```
 
-`GET /coin-transactions`
+`GET /api/waas/v1/coin-transactions`
 
 전체 입출금 내역을 조회합니다.
 
@@ -2559,14 +2531,14 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coin-transactions/{transactionDisplayId} \
+curl -X GET https://waas.karbon.fi/api/waas/v1/coin-transactions/{transactionDisplayId} \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
 
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coin-transactions/{transactionDisplayId}");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/coin-transactions/{transactionDisplayId}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -2589,7 +2561,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coin-transactions/{transactionDisplayId}',
+fetch('https://waas.karbon.fi/api/waas/v1/coin-transactions/{transactionDisplayId}',
 {
   method: 'GET',
 
@@ -2612,7 +2584,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coin-transactions/{transactionDisplayId}',
+result = RestClient.get 'https://waas.karbon.fi/api/waas/v1/coin-transactions/{transactionDisplayId}',
   params: {
   }, headers: headers
 
@@ -2636,7 +2608,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coin-transactions/{transactionDisplayId}', array(
+    $response = $client->request('GET','https://waas.karbon.fi/api/waas/v1/coin-transactions/{transactionDisplayId}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -2659,13 +2631,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/coin-transactions/{transactionDisplayId}', headers = headers)
+r = requests.get('https://waas.karbon.fi/api/waas/v1/coin-transactions/{transactionDisplayId}', headers = headers)
 
 print(r.json())
 
 ```
 
-`GET /coin-transactions/{transactionDisplayId}`
+`GET /api/waas/v1/coin-transactions/{transactionDisplayId}`
 
 특정 입출금건에 대한 상세 정보를 조회합니다.
 
@@ -2726,14 +2698,14 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts \
+curl -X GET https://waas.karbon.fi/api/waas/v1/nfts \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
 
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/nfts");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -2756,7 +2728,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts',
+fetch('https://waas.karbon.fi/api/waas/v1/nfts',
 {
   method: 'GET',
 
@@ -2779,7 +2751,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts',
+result = RestClient.get 'https://waas.karbon.fi/api/waas/v1/nfts',
   params: {
   }, headers: headers
 
@@ -2803,7 +2775,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts', array(
+    $response = $client->request('GET','https://waas.karbon.fi/api/waas/v1/nfts', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -2826,13 +2798,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts', headers = headers)
+r = requests.get('https://waas.karbon.fi/api/waas/v1/nfts', headers = headers)
 
 print(r.json())
 
 ```
 
-`GET /nfts`
+`GET /api/waas/v1/nfts`
 
 전체 NFT 보유 목록을 조회합니다.
 
@@ -2897,14 +2869,14 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayIdId} \
+curl -X GET https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayIdId} \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
 
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayIdId}");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayIdId}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -2927,7 +2899,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayIdId}',
+fetch('https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayIdId}',
 {
   method: 'GET',
 
@@ -2950,7 +2922,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayIdId}',
+result = RestClient.get 'https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayIdId}',
   params: {
   }, headers: headers
 
@@ -2974,7 +2946,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayIdId}', array(
+    $response = $client->request('GET','https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayIdId}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -2997,13 +2969,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayIdId}', headers = headers)
+r = requests.get('https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayIdId}', headers = headers)
 
 print(r.json())
 
 ```
 
-`GET /nfts/{nftDisplayIdId}`
+`GET /api/waas/v1/nfts/{nftDisplayIdId}`
 
 특정 NFT에 대한 상세 정보를 조회합니다.
 
@@ -3053,7 +3025,7 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayId}/withdrawals \
+curl -X POST https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayId}/withdrawals \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
@@ -3061,7 +3033,7 @@ curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nft
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayId}/withdrawals");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayId}/withdrawals");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -3095,7 +3067,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayId}/withdrawals',
+fetch('https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayId}/withdrawals',
 {
   method: 'POST',
   body: inputBody,
@@ -3119,7 +3091,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.post 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayId}/withdrawals',
+result = RestClient.post 'https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayId}/withdrawals',
   params: {
   }, headers: headers
 
@@ -3144,7 +3116,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayId}/withdrawals', array(
+    $response = $client->request('POST','https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayId}/withdrawals', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -3168,13 +3140,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.post('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayId}/withdrawals', headers = headers)
+r = requests.post('https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayId}/withdrawals', headers = headers)
 
 print(r.json())
 
 ```
 
-`POST /nfts/{nftDisplayId}/withdrawals`
+`POST /api/waas/v1/nfts/{nftDisplayId}/withdrawals`
 
 NFT 출금 신청을 합니다.
 
@@ -3206,11 +3178,7 @@ NFT 출금 신청을 합니다.
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
 <h3 id="7.4-nft-출금-신청-responses">Responses</h3>
@@ -3231,7 +3199,7 @@ NFT 출금 신청을 합니다.
 
 ```shell
 # You can also use wget
-curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayId}/withdrawals/-/fee \
+curl -X POST https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayId}/withdrawals/-/fee \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
@@ -3239,7 +3207,7 @@ curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nft
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayId}/withdrawals/-/fee");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayId}/withdrawals/-/fee");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -3271,7 +3239,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayId}/withdrawals/-/fee',
+fetch('https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayId}/withdrawals/-/fee',
 {
   method: 'POST',
   body: inputBody,
@@ -3295,7 +3263,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.post 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayId}/withdrawals/-/fee',
+result = RestClient.post 'https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayId}/withdrawals/-/fee',
   params: {
   }, headers: headers
 
@@ -3320,7 +3288,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayId}/withdrawals/-/fee', array(
+    $response = $client->request('POST','https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayId}/withdrawals/-/fee', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -3344,13 +3312,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.post('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/{nftDisplayId}/withdrawals/-/fee', headers = headers)
+r = requests.post('https://waas.karbon.fi/api/waas/v1/nfts/{nftDisplayId}/withdrawals/-/fee', headers = headers)
 
 print(r.json())
 
 ```
 
-`POST /nfts/{nftDisplayId}/withdrawals/-/fee`
+`POST /api/waas/v1/nfts/{nftDisplayId}/withdrawals/-/fee`
 
 네트워크 수수료를 조회합니다.
 수수료는 느림, 중간, 빠름 수수료를 조회할 수 있습니다.
@@ -3406,7 +3374,7 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee \
+curl -X POST https://waas.karbon.fi/api/waas/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
@@ -3414,7 +3382,7 @@ curl -X POST https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/-/wi
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -3440,7 +3408,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee',
+fetch('https://waas.karbon.fi/api/waas/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee',
 {
   method: 'POST',
   body: inputBody,
@@ -3464,7 +3432,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.post 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee',
+result = RestClient.post 'https://waas.karbon.fi/api/waas/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee',
   params: {
   }, headers: headers
 
@@ -3489,7 +3457,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('POST','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee', array(
+    $response = $client->request('POST','https://waas.karbon.fi/api/waas/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -3513,13 +3481,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.post('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee', headers = headers)
+r = requests.post('https://waas.karbon.fi/api/waas/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee', headers = headers)
 
 print(r.json())
 
 ```
 
-`POST /nfts/-/withdrawals/{transactionDisplayId}/replace-fee`
+`POST /api/waas/v1/nfts/-/withdrawals/{transactionDisplayId}/replace-fee`
 
 네트워크 수수료를 재설정합니다.
 
@@ -3543,11 +3511,7 @@ print(r.json())
 > 400 Response
 
 ```json
-{
-  "error": "string",
-  "message": "string",
-  "data": "string"
-}
+"string"
 ```
 
 <h3 id="7.6-네트워크-수수료-재설정-responses">Responses</h3>
@@ -3568,14 +3532,14 @@ print(r.json())
 
 ```shell
 # You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions \
+curl -X GET https://waas.karbon.fi/api/waas/v1/nft-transactions \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
 
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/nft-transactions");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -3598,7 +3562,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions',
+fetch('https://waas.karbon.fi/api/waas/v1/nft-transactions',
 {
   method: 'GET',
 
@@ -3621,7 +3585,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions',
+result = RestClient.get 'https://waas.karbon.fi/api/waas/v1/nft-transactions',
   params: {
   }, headers: headers
 
@@ -3645,7 +3609,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions', array(
+    $response = $client->request('GET','https://waas.karbon.fi/api/waas/v1/nft-transactions', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -3668,13 +3632,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions', headers = headers)
+r = requests.get('https://waas.karbon.fi/api/waas/v1/nft-transactions', headers = headers)
 
 print(r.json())
 
 ```
 
-`GET /nft-transactions`
+`GET /api/waas/v1/nft-transactions`
 
 NFT 입출금 전체 목록을 조회합니다.
 
@@ -3761,14 +3725,14 @@ NFT 입출금 전체 목록을 조회합니다.
 
 ```shell
 # You can also use wget
-curl -X GET https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId} \
+curl -X GET https://waas.karbon.fi/api/waas/v1/nft-transactions/{transactionDisplayId} \
   -H 'Accept: application/json' \
   -H 'x-api-key: API_KEY'
 
 ```
 
 ```java
-URL obj = new URL("https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}");
+URL obj = new URL("https://waas.karbon.fi/api/waas/v1/nft-transactions/{transactionDisplayId}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
@@ -3791,7 +3755,7 @@ const headers = {
   'x-api-key':'API_KEY'
 };
 
-fetch('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}',
+fetch('https://waas.karbon.fi/api/waas/v1/nft-transactions/{transactionDisplayId}',
 {
   method: 'GET',
 
@@ -3814,7 +3778,7 @@ headers = {
   'x-api-key' => 'API_KEY'
 }
 
-result = RestClient.get 'https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}',
+result = RestClient.get 'https://waas.karbon.fi/api/waas/v1/nft-transactions/{transactionDisplayId}',
   params: {
   }, headers: headers
 
@@ -3838,7 +3802,7 @@ $client = new \GuzzleHttp\Client();
 $request_body = array();
 
 try {
-    $response = $client->request('GET','https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}', array(
+    $response = $client->request('GET','https://waas.karbon.fi/api/waas/v1/nft-transactions/{transactionDisplayId}', array(
         'headers' => $headers,
         'json' => $request_body,
        )
@@ -3861,13 +3825,13 @@ headers = {
   'x-api-key': 'API_KEY'
 }
 
-r = requests.get('https://8lxgdmo8r0.execute-api.us-east-1.amazonaws.com/v1/nft-transactions/{transactionDisplayId}', headers = headers)
+r = requests.get('https://waas.karbon.fi/api/waas/v1/nft-transactions/{transactionDisplayId}', headers = headers)
 
 print(r.json())
 
 ```
 
-`GET /nft-transactions/{transactionDisplayId}`
+`GET /api/waas/v1/nft-transactions/{transactionDisplayId}`
 
 특정 NFT 입출금건을 상세 정보를 조회합니다.
 
