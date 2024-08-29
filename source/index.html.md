@@ -332,6 +332,7 @@ WaaS에서 사용할 수 있는 코인과 토큰 목록을 조회합니다.
 ```json
 [
   {
+    "coinDisplayId": "8130e0f5-64b6-48c0-a10c-1d1d668810e5",
     "koreanName": "이더리움",
     "englishName": "Ethereum",
     "symbol": "ETH",
@@ -355,6 +356,7 @@ Status Code **200**
 |Name|Type|Required|Description|
 |---|---|---|---|---|
 |*anonymous*|[[코인별 원화 가격 응답](#schema코인별 원화 가격 응답)]|false|none|
+|» coinDisplayId|string|false|코인 ID|
 |» koreanName|string|false|코인 한글명|
 |» englishName|string|false|코인 영문명|
 |» symbol|string|false|코인 심볼|
@@ -574,7 +576,7 @@ System.out.println(response.toString());
 const inputBody = '{
   "walletName": "이더리움 지갑2",
   "coinDisplayId": "[8130e0f5-64b6-48c0-a10c-1d1d668810e5]",
-  "network": "TEST_NET"
+  "isMainnet": true
 }';
 const headers = {
   'Content-Type':'application/json',
@@ -671,7 +673,7 @@ print(r.json())
 {
   "walletName": "이더리움 지갑2",
   "coinDisplayId": "[8130e0f5-64b6-48c0-a10c-1d1d668810e5]",
-  "network": "TEST_NET"
+  "isMainnet": true
 }
 ```
 
@@ -3721,7 +3723,7 @@ NFT 입출금 전체 목록을 조회합니다.
       "walletName": "사내용 지갑",
       "nftName": "29",
       "symbol": "JINU",
-      "network": "HOLESKY",
+      "network": "holesky",
       "type": "WITHDRAW",
       "stat": "COMPLETE_WITHDRAW",
       "transactionHash": "0xadcbfac94920d2552ffc521711b634b473cf23551423344ff7f163c723580dbd",
@@ -3887,7 +3889,7 @@ print(r.json())
   "walletName": "사내용 지갑",
   "nftName": "29",
   "symbol": "JINU",
-  "network": "HOLESKY",
+  "network": "holesky",
   "type": "WITHDRAW",
   "stat": "COMPLETE_WITHDRAW",
   "transactionHash": "0xadcbfac94920d2552ffc521711b634b473cf23551423344ff7f163c723580dbd",
@@ -3954,7 +3956,7 @@ print(r.json())
 {
   "walletName": "이더리움 지갑2",
   "coinDisplayId": "[8130e0f5-64b6-48c0-a10c-1d1d668810e5]",
-  "network": "TEST_NET"
+  "isMainnet": true
 }
 
 ```
@@ -3965,14 +3967,7 @@ print(r.json())
 |---|---|---|---|
 |walletName|string(숫자/영문/한글 가능, 최대 20자)|true|지갑 명|
 |coinDisplayId|[string]|true|코인 ID|
-|network|string|true|네트워크 종류|
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|network|MAIN_NET|
-|network|TEST_NET|
+|isMainnet|boolean|true|메인넷 여부|
 
 <h2 id="tocS_지갑 변경 요청">지갑 변경 요청</h2>
 
@@ -4668,7 +4663,7 @@ print(r.json())
       "walletName": "사내용 지갑",
       "nftName": "29",
       "symbol": "JINU",
-      "network": "HOLESKY",
+      "network": "holesky",
       "type": "WITHDRAW",
       "stat": "COMPLETE_WITHDRAW",
       "transactionHash": "0xadcbfac94920d2552ffc521711b634b473cf23551423344ff7f163c723580dbd",
@@ -4711,7 +4706,7 @@ print(r.json())
   "walletName": "사내용 지갑",
   "nftName": "29",
   "symbol": "JINU",
-  "network": "HOLESKY",
+  "network": "holesky",
   "type": "WITHDRAW",
   "stat": "COMPLETE_WITHDRAW",
   "transactionHash": "0xadcbfac94920d2552ffc521711b634b473cf23551423344ff7f163c723580dbd",
@@ -4756,10 +4751,6 @@ print(r.json())
 
 |Property|Value|
 |---|---|
-|network|MAIN_NET|
-|network|TEST_NET|
-|network|GOERLI|
-|network|HOLESKY|
 |type|DEPOSIT|
 |type|WITHDRAW|
 |stat|WAIT_APPROVAL|
@@ -4861,6 +4852,7 @@ print(r.json())
 
 ```json
 {
+  "coinDisplayId": "8130e0f5-64b6-48c0-a10c-1d1d668810e5",
   "koreanName": "이더리움",
   "englishName": "Ethereum",
   "symbol": "ETH",
@@ -4873,6 +4865,7 @@ print(r.json())
 
 |Name|Type|Required|Description|
 |---|---|---|---|
+|coinDisplayId|string|false|코인 ID|
 |koreanName|string|false|코인 한글명|
 |englishName|string|false|코인 영문명|
 |symbol|string|false|코인 심볼|
@@ -4985,10 +4978,6 @@ print(r.json())
 
 |Property|Value|
 |---|---|
-|network|MAIN_NET|
-|network|TEST_NET|
-|network|GOERLI|
-|network|HOLESKY|
 |type|DEPOSIT|
 |type|WITHDRAW|
 |stat|WAIT_APPROVAL|
